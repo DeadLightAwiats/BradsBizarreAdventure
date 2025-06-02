@@ -24,6 +24,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
     }
 
-
+    public void SettingsButton()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
     // Optionally, add a method to stop music from the menu
 }
