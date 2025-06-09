@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BedroomLvl_01.unity
     guid: 4f37120ff89ba884da060b07f0a6516c
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
+    path: Assets/Scenes/Pause.unity
     guid: 42849f4565ce2a3458b77b53721d5ef7
   - enabled: 1
     path: Assets/Scenes/HallwayLvl_02.unity
