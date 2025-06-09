@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseScreen;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //If Pause screen is active unpause and vise versa
+            if (pauseScreen.activeInHierarchy)
+                PauseGame(false);
+            else
+                PauseGame(true);
+        }
+    }
+
     public void Level_01()
     {
         SceneManager.LoadSceneAsync(1);
@@ -27,6 +40,23 @@ public class MainMenu : MonoBehaviour
     public void SettingsButton()
     {
         SceneManager.LoadSceneAsync(2);
+    }
+
+    public void PauseGame(bool Status)
+    {
+        //if status == true pause.  if status == false unpause
+        pauseScreen.SetActive(Status);
+
+        if (Status)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
+
+    }
+    public void Resume()
+    {
+
+        PauseGame(false);
     }
     // Optionally, add a method to stop music from the menu
 }

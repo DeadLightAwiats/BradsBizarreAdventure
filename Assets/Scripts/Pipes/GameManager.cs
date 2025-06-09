@@ -12,10 +12,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] wateredPipes;
     [SerializeField] private GameObject[] pipes;
     [SerializeField] private GameObject YouWinPopUp;
-    [SerializeField] private ParticleSystem ps;
-    [SerializeField] private AudioClip particles;
-    [SerializeField] private AudioClip waterFlow;
-    public Animator anim;
     public int correctedPipes = 0;
     public int totalPipes = 0;
     public int totalWaterPipes = 0;
@@ -46,17 +42,12 @@ public class GameManager : MonoBehaviour
             Debug.LogError("You win popup reference is null!");
             return;
         }
-        if (ps == null)
-        {
-            Debug.LogError("Particle System reference is null!");
-            return;
-        }
+        
 
-        anim = GetComponent<Animator>();
+       
 
-        ps = GetComponentInChildren<ParticleSystem>();
 
-        anim.ResetTrigger("Completed");
+       
 
         PipeHolder.SetActive(true);
         YouWinPopUp.SetActive(false);
@@ -79,45 +70,10 @@ public class GameManager : MonoBehaviour
         string sceneName = currentScene.name;
 
         correctedPipes++;
-        if (correctedPipes == totalPipes)
-        {
-            if (sceneName == "PipeLevel1")
-            {
-                anim.SetTrigger("Completed");
-            }
-            else if (sceneName == "PipeLevel2")
-            {
-                anim.SetTrigger("CompletedLevel2");
-            }
-            else if (sceneName == "PipeLevel3")
-            {
-                anim.SetTrigger("CompletedLevel3");
-            }
-
-            Debug.Log("You Win");
-
-        }
+        if(correctedPipes  == totalPipes)
+            YouWinPopUp.SetActive(true);
     }
 
-    public void PipesDisappear()
-    {
-
-        // Start a coroutine to wait for the particle system to stop
-        StartCoroutine(WaitForParticlesToStop());
-    }
-
-    private IEnumerator WaitForParticlesToStop()
-    {
-        // Wait until the particle system is no longer playing
-        while (!ps.isStopped)
-        {
-            yield return null; // Wait for the next frame
-        }
-
-        // Activate the YouWinPopUp GameObject
-        YouWinPopUp.SetActive(true);
-        Debug.Log("You Win popup activated after particles stopped.");
-    }
     public void IncorrectMove()
     {
         correctedPipes--;
