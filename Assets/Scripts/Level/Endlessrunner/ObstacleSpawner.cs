@@ -9,16 +9,21 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private float minX;
     [SerializeField] private float minY;
     [SerializeField] private float timeBetweenSpawn;
+    public bool canSpawn = true;
     private float spawnTime;
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > spawnTime)
+        if(canSpawn)
         {
-            Spawn();
-            spawnTime = Time.time + timeBetweenSpawn;
-         }
+            if (Time.time > spawnTime)
+            {
+                Spawn();
+                spawnTime = Time.time + timeBetweenSpawn;
+            }
+        }
+      
     }
     void Spawn()
     {
