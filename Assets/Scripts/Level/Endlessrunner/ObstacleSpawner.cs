@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject obstacle;
+    [SerializeField] private GameObject[] obstacle;
     [SerializeField] private float maxY;
     [SerializeField] private float maxX;
     [SerializeField] private float minX;
@@ -25,6 +25,7 @@ public class ObstacleSpawner : MonoBehaviour
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
 
-        Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        int randomIndex = Random.Range(0, obstacle.Length);
+        Instantiate(obstacle[randomIndex], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 }
