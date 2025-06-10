@@ -8,12 +8,17 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject deathScreen;
+
+    private int currentScene;
     private Health playerHealth;
 
     private void Start()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-        deathScreen.SetActive(false); // Ensure death screen is hidden at start
+        if (currentScene == 5)
+        {
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+            deathScreen.SetActive(false); // Ensure death screen is hidden at start
+        }
         pauseScreen.SetActive(false); // Ensure pause screen is hidden at start
     }
     private void Update()
@@ -26,16 +31,20 @@ public class MainMenu : MonoBehaviour
             else
                 PauseGame(true);
         }
-        if (playerHealth.currentHealth == 0)
+        if (currentScene == 5)
         {
-            deathScreen.SetActive(true);
-            Time.timeScale = 0; // Pause the game when player dies
+            if (playerHealth.currentHealth == 0)
+            {
+                deathScreen.SetActive(true);
+                Time.timeScale = 0; // Pause the game when player dies
+            }
+            else if (playerHealth.currentHealth > 0 && deathScreen.activeInHierarchy)
+            {
+                deathScreen.SetActive(false); // Hide death screen if player is alive
+                Time.timeScale = 1; // Resume the game if player is alive
+            }
         }
-        else if (playerHealth.currentHealth > 0 && deathScreen.activeInHierarchy)
-        {
-            deathScreen.SetActive(false); // Hide death screen if player is alive
-            Time.timeScale = 1; // Resume the game if player is alive
-        }
+
     }
 
     public void Level_01()

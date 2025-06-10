@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
     private Rigidbody2D body;
-    private Animator anim;
     private BoxCollider2D boxCollider;
     private float wallJumpCooldown;
     private float horizontalInput;
@@ -22,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //Grab references for rigidbody and animator from object
         body = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         playerHealth = GetComponent<Health>();
+        wallJumpCooldown = 0.21f; // Allow movement immediately
     }
 
     private void Update()
@@ -33,13 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
         //Flip player when moving left-right
         if (horizontalInput > 0.01f)
-            transform.localScale = new Vector3(7,7,0);
+            transform.localScale = new Vector3(75.5727f, 75.5727f, 0);
         else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-7,7,0);
+            transform.localScale = new Vector3(-75.5727f, 75.5727f, 0);
 
         //Set animator parameters
-        anim.SetBool("run", horizontalInput != 0);
-        anim.SetBool("grounded", isGrounded());
 
         //Wall jump logic
         if (wallJumpCooldown > 0.2f)
@@ -66,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded())
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
-            anim.SetTrigger("jump");
         }
 
         else if (onWall() && !isGrounded())
