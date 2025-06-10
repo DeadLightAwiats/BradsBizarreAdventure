@@ -3,7 +3,7 @@ using UnityEngine;
 public class EndlessMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float moveSpeed = 5;
+    public float moveSpeed = 15;
     // Start is called before the first frame update
     void Start()
     {
