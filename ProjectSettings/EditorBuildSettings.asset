@@ -9,15 +9,25 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/BedroomLvl_01.unity
-    guid: 4f37120ff89ba884da060b07f0a6516c
-  - enabled: 1
     path: Assets/Scenes/Pause.unity
     guid: 42849f4565ce2a3458b77b53721d5ef7
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/Hallway.unity
+=======
+    path: Assets/Scenes/BedroomLvl_01.unity
+    guid: 4f37120ff89ba884da060b07f0a6516c
+  - enabled: 1
+    path: Assets/Scenes/HallwayLvl_02.unity
+>>>>>>> Stashed changes
     guid: acdf02f170b3ba14c9451c4b13cc6ee2
   - enabled: 1
     path: Assets/Scenes/PipesLvl_02.unity
     guid: 922f69a9974ed4543a9ca5038789a842
+  - enabled: 1
+    path: Assets/Scenes/RoadLvl_04.unity
+    guid: 1fa15e5f989784442922001488f0afb9
+  - enabled: 1
+    path: Assets/Scenes/SewerScene_05.unity
+    guid: 6561eb82f2635164da17573e77d56a16
   m_configObjects: {}

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6265117051115612454}
   - component: {fileID: 4420930209565531999}
   m_Layer: 0
-  m_Name: RedJeep
+  m_Name: Jeep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b4e5d9793c17b468b023f0b9f04b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathScreen: {fileID: 0}
 --- !u!50 &4420930209565531999
 Rigidbody2D:
   serializedVersion: 4

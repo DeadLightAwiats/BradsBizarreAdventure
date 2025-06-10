@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.tag == "border")
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
         if(collision.tag == "Player")
         {
