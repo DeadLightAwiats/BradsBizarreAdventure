@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    [SerializeField] private GameObject DeathScreen;
     private Health playerHealth;
+    
     private void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
@@ -31,7 +33,7 @@ public class Obstacle : MonoBehaviour
             if(playerHealth.currentHealth <= 0)
             {
                 Debug.Log("Player has died.");
-                Destroy(collision.gameObject);
+
             }
         }
     }
