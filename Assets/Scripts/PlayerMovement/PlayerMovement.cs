@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     private Health playerHealth;
     private int damage;
+    public bool CanMove { get; set; } = true;
     [Header("Audio")]
     [SerializeField] private AudioClip jump;
 

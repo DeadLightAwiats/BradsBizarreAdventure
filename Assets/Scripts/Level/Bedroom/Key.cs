@@ -7,7 +7,7 @@ public class Key : MonoBehaviour
 {
     public GameObject Popup;
     private bool playerInTrigger = false;
-    private int currentScene;
+    public static bool HasKey { get; private set; } = false; // Static flag
 
     private void Start()
     {
@@ -19,8 +19,8 @@ public class Key : MonoBehaviour
         if (playerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
             Popup.SetActive(false); // Hide the popup after collecting the key
-            if(currentScene == 1)
-                Destroy(gameObject); // Destroy the key object
+            HasKey = true;          // Player now has the key
+            Destroy(gameObject);    // Remove the key from the scene
         }
     }
 
