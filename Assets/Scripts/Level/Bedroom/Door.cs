@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
 {
     private Key Key; // Reference to the Key script
     private bool playerInTrigger = false;
+    [SerializeField] private int currentScene; // Set this in the Inspector
 
     private void Start()
     {
@@ -18,7 +19,14 @@ public class Door : MonoBehaviour
     {
         if (playerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene("Hallway"); // Load the Hallway scene when player presses E
+            if (currentScene == 1)
+            {
+                SceneManager.LoadScene("GardenLvl_02"); // Load the Garden scene
+            }
+            else if (currentScene == 2)
+            {
+                SceneManager.LoadScene("RoadLvl_03"); // Load the Road scene
+            }
         }
     }
 

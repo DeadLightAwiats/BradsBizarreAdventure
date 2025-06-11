@@ -12,18 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/BedroomLvl_01.unity
     guid: 4f37120ff89ba884da060b07f0a6516c
   - enabled: 1
-    path: Assets/Scenes/Hallway.unity
-    guid: acdf02f170b3ba14c9451c4b13cc6ee2
-  - enabled: 1
-    path: Assets/Scenes/PipesLvl_02.unity
-    guid: 922f69a9974ed4543a9ca5038789a842
-  - enabled: 1
-    path: Assets/Scenes/GardenLvl_03.unity
+    path: Assets/Scenes/GardenLvl_02.unity
     guid: 759ab3896342ebe4aaf9c5c9912ee330
   - enabled: 1
-    path: Assets/Scenes/RoadLvl_04.unity
+    path: Assets/Scenes/RoadLvl_03.unity
     guid: 62d3937e179fc504988e35dd857ef6a9
   - enabled: 1
-    path: Assets/Scenes/SewerScene_05.unity
+    path: Assets/Scenes/SewerScene_04.unity
     guid: 6561eb82f2635164da17573e77d56a16
+  - enabled: 1
+    path: Assets/Scenes/PipesLvl_05.unity
+    guid: 922f69a9974ed4543a9ca5038789a842
   m_configObjects: {}

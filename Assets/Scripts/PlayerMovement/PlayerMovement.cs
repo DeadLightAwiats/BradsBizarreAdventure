@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     private Health playerHealth;
     private int damage;
-
     [Header("Audio")]
     [SerializeField] private AudioClip jump;
 
@@ -31,10 +30,11 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         //Flip player when moving left-right
-        if (horizontalInput > 0.01f)
-            transform.localScale = new Vector3(75.5727f, 75.5727f, 0);
-        else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-75.5727f, 75.5727f, 0);
+            if (horizontalInput > 0.01f)
+                transform.localScale = new Vector3(75.5727f, 75.5727f, 0);
+            else if (horizontalInput < -0.01f)
+                transform.localScale = new Vector3(-75.5727f, 75.5727f, 0);
+      
 
         //Set animator parameters
 
