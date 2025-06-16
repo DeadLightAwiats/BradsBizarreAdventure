@@ -453,8 +453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8045f1aff5f33498225ab3086ec6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 0}
-  deathScreen: {fileID: 0}
+  pauseScreen: {fileID: 5292354318664137759, guid: aedbb19ff032e13489e970c73b29b71c, type: 3}
+  deathScreen: {fileID: 4849182164419151055, guid: e6e637f974f35c04ea0bf313dce1ed90, type: 3}
 --- !u!114 &32370493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11749,6 +11749,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5665281525725862712, guid: fe709aeeeec1d81479cda73e7897c8b6, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 4849182164419151055, guid: e6e637f974f35c04ea0bf313dce1ed90, type: 3}
+    - target: {fileID: 5665281525725862712, guid: fe709aeeeec1d81479cda73e7897c8b6, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 5292354318664137759, guid: aedbb19ff032e13489e970c73b29b71c, type: 3}
     - target: {fileID: 6155198982424013041, guid: fe709aeeeec1d81479cda73e7897c8b6, type: 3}
       propertyPath: m_Name
       value: MainCamera

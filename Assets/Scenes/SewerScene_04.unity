@@ -1043,6 +1043,7 @@ MonoBehaviour:
   - So i hear you're looking for a job?
   - Fix these pipes and i'll think about it
   currentLine: 0
+  currentScene: 4
 --- !u!114 &1069192188358548648
 MonoBehaviour:
   m_ObjectHideFlags: 0

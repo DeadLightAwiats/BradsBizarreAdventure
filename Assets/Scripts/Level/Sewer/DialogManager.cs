@@ -36,12 +36,7 @@ public class DialogManager : MonoBehaviour
         {
             NextLine();
         }
-
-        // Move scene change logic outside the input check
-        if (!dialogActive && currentScene == 4)
-        {
-            SceneManager.LoadScene("PipesLvl_05");
-        }
+        // Removed scene change from here
     }
 
     public void ShowBox(string dialogue)
@@ -74,6 +69,12 @@ public class DialogManager : MonoBehaviour
             currentLine = 0;
             if (playerController != null)
                 playerController.CanMove = true;
+
+            // Scene change logic here
+            if (currentScene == 4)
+            {
+                SceneManager.LoadScene("PipesLvl_05");
+            }
         }
         else
         {
